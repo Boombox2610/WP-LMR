@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script>
+        // Write a JavaScript program to find the area of a triangle where lengths of the three of its 
+        // sides are 5, 6, 7
+        function calculateArea(a, b, c){
+            let s = (a + b + c) / 2;
+            area = Math.sqrt((s * (s - a) * (s - b) * (s - c)));
+            return area;
+        }
+        //Write a JavaScript program to compute the sum of the two given integers. If the two values 
+        // are same, then returns triple their sum 
+        function calculateSum(a, b){
+            let sum = (a == b)? (a + b) * 3 : (a + b);
+            return sum;
+            
+        }
+        // Write a JavaScript function that reverse a number taking input from user using prompt 
+        // box
+        function reverseNum(){
+            let num = prompt("Enter a number to reverse: ");
+            let rNum = num.split('').reverse().join('');
+            alert("reverse num is " + rNum);
+        }
+        // Write a JavaScript function that accepts a string as a parameter and converts the first letter 
+        // of each word of the string in upper case.
+        function upper(str){
+            let wrds = str.split(" ");
+            for(let i = 0; i < wrds.length; i++){
+                wrds[i] = wrds[i].charAt(0).toUpperCase() + wrds[i].slice(1).toLowerCase();
+            }
+            return wrds.join(" ");
+        }
+        //Write a JavaScript program to calculate sphere volume using form elements.
+        //Sample Output of the form
+        function sphereVolume(){
+            let radius = document.getElementById("radius").value;
+            let volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById("vol").innerText = "Volume: " + volume;
+        }
+
+        //CALCULATOR
+        function calculate(operation){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let result = 0;
+            switch(operation){
+                case 'add':
+                    result = Number(num1) + Number(num2);
+                    break;
+                
+                case 'sub':
+                    result = num1 - num2;
+                    break;
+                
+                case 'mul':
+                    result = num1 * num2;
+                    break;
+                case 'div':
+                    result = num1 / num2;
+                    break;
+                default: 
+                    result = "INVALID";
+                    break;
+            }
+            document.getElementById("ans").value = result;
+        }
+
+        window.onload = function(){
+            let a = 5;
+            let b = 5;
+            let c = 7;
+            let area = calculateArea(a, b, c);
+            document.getElementById("area").innerText = "The area is: " + area.toFixed(2);
+
+            document.getElementById("sum").innerText = "Sum of 5 and 6 is: " + calculateSum(a, b);
+            //reverseNum();
+
+            let imputString = "this is an IMPUT STRING";
+            document.getElementById("lowerUpper").innerText = upper(imputString);
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h1>The area is: </h1>
+    <div id="area"></div>
+    <h1>The Sum is: </h1>
+    <div id="sum"></div>
+    <div id="area"></div>
+    <h1>The uppjer lower string is: </h1>
+    <div id="lowerUpper"></div>
+
+    <h1>Sphere</h1>
+    <form>
+        <input type="text" placeholder="radius" id="radius">
+        <div id="vol"></div>
+        <button type="button" onclick="sphereVolume()">Calculate</button>
+    </form>
+
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button type="button" onclick="calculate('add')">ADD</button>
+    <button type="button" onclick="calculate('sub')">SUB</button>
+    <button type="button" onclick="calculate('div')">DIV</button>
+    <button type="button" onclick="calculate('mul')">MUL</button><br>
+    <input type="number" id="ans" disabled>
+</body>
+</html>
