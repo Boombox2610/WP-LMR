@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        /* padding: 5px; */
+        text-align: center;
+      }
+
+      th,
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p style="align-items: center"></p>
+    <p>Using TABLES in Websites</p>
+    <table>
+      <caption>
+        Caption-Nested Table
+      </caption>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+      <tr>
+        <td colspan="2">Colspan Column</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Rowspan Cell</td>
+        <td>Cell 2</td>
+      </tr>
+      <tr>
+        <td>
+          <table
+            style="
+              background-color: yellow;
+              border-collapse: collapse;
+              padding: 5px;
+            "
+          >
+            <tr>
+              <th>Inner Column Heading 1</th>
+              <th>Inner Column Heading 2</th>
+            </tr>
+            <tr>
+              <td style="background-color: rgb(106, 112, 123)">
+                Inner Data Cell 1
+              </td>
+              <td style="background-color: rgb(180, 255, 89); padding: 20px">
+                <table
+                  style="background-color: rgb(239, 174, 222); padding: 5px"
+                >
+                  <tr>
+                    <th>Inner Most Column Heading 1</th>
+                    <th>Inner Most Column Heading 2</th>
+                  </tr>
+                  <tr>
+                    <td style="background-color: rgb(255, 41, 255)">
+                      Inner Most Data Cell 1
+                    </td>
+                    <td style="background-color: rgb(255, 159, 41)">
+                      Inner Most Data Cell 2
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
